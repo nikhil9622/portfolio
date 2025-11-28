@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Variables */
+  --color-primary: #0A84FF;
+  --color-secondary: #00D9FF;
+  --color-accent: #FF453A;
+  --color-dark: #1C1C1E;
+  --color-light: #F2F2F7;
+  
+  /* Spacing */
+  --space-unit: 1rem;
+  
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+/* Dark Mode Variables */
+.dark {
+  --bg-primary: #1C1C1E;
+  --bg-secondary: #2C2C2E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #98989D;
+}
+
+/* Light Mode Variables */
+:root:not(.dark) {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F2F2F7;
+  --text-primary: #1C1C1E;
+  --text-secondary: #98989D;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  .dark .glassmorphism {
+    @apply bg-black/10 backdrop-blur-lg border border-white/10;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white;
+    @apply hover:shadow-lg hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800;
+    @apply dark:bg-gray-700 dark:text-white;
+    @apply hover:bg-gray-300 dark:hover:bg-gray-600;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary;
+    @apply hover:bg-primary hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md;
+    @apply border border-gray-200 dark:border-gray-700;
+    @apply transition-all duration-300;
+  }
+  
+  .card:hover {
+    @apply shadow-xl transform -translate-y-2;
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 rounded-lg;
+    @apply border-2 border-gray-300 dark:border-gray-600;
+    @apply bg-white dark:bg-gray-800;
+    @apply text-gray-900 dark:text-white;
+    @apply focus:border-primary focus:outline-none;
+    @apply transition-colors duration-300;
+  }
+  
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply mb-4;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    @apply mb-4;
+  }
+  
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-bold;
+    @apply mb-3;
+  }
+  
+  .body-text {
+    @apply text-base md:text-lg;
+    @apply text-gray-600 dark:text-gray-400;
+    @apply leading-relaxed;
+  }
+}
+
+/* Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-accent),
+    var(--color-primary)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}

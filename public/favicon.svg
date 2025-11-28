@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield background with gradient -->
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A84FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield shape -->
+  <path d="M256 32L64 112v144c0 112 48 208 192 224 144-16 192-112 192-224V112L256 32z" 
+        fill="url(#shieldGradient)"
+        stroke="#FFFFFF"
+        stroke-width="8"/>
+  
+  <!-- NC Text -->
+  <text x="256" y="340" 
+        font-family="JetBrains Mono, monospace" 
+        font-size="180" 
+        font-weight="bold"
+        fill="#FFFFFF" 
+        text-anchor="middle"
+        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">NC</text>
+</svg>
