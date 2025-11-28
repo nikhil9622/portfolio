@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features include dark mode, smooth animations, contact form integration, and full SEO optimization.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/0A84FF/FFFFFF?text=Portfolio+Preview)
+
 
 ## ✨ Features
 
@@ -147,30 +147,9 @@ npm run export
 
 The exported site will be in the `out/` directory.
 
-## 🌐 Deployment Options
 
-### Vercel (Recommended)
 
-1. Push your code to GitHub
-2. Visit [vercel.com](https://vercel.com)
-3. Import your repository
-4. Add environment variables
-5. Deploy!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-### Netlify
-
-1. Push your code to GitHub
-2. Visit [netlify.com](https://netlify.com)
-3. New site from Git
-4. Select your repository
-5. Build command: `npm run build`
-6. Publish directory: `out`
-7. Add environment variables
-8. Deploy!
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
 
 ### GitHub Pages
 
@@ -237,28 +216,6 @@ npm run export
 - Environment variables for sensitive data
 - XSS protection
 - CSRF protection
-
-## 📄 License
-
-MIT License - feel free to use this template for your own portfolio!
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📞 Contact
-
-**Nikhil Chandan**
-- Email: nikhil@example.com
-- LinkedIn: [linkedin.com/in/nikhilchandan](https://linkedin.com/in/nikhilchandan)
-- GitHub: [github.com/nikhilchandan](https://github.com/nikhilchandan)
-
-## 🙏 Acknowledgments
-
-- Next.js team for the amazing framework
-- Tailwind CSS for the utility-first CSS framework
-- Framer Motion for smooth animations
-- Lucide for beautiful icons
 
 ---
 
